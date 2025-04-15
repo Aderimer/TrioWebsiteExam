@@ -1,0 +1,28 @@
+body {
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+a {
+  color: #00B7FF;
+  text-decoration: none;
+}
+
+
+a > img {
+  border: 5px solid black;
+  border-radius: 10%;
+  padding: 40px;
+  margin: 30px;
+  box-shadow: 0 0 3px #000;
+}
+
+.container {
+  display: flex;
+  width: 100vw;
+  height: 15vh;
+  justify-content: center;
+  align-items: center;
+  bottom: 25vh;
+  position: absolute;
+}
