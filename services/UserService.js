@@ -1,5 +1,5 @@
 class UserService {
-    constructor() {
+    constructor(db) {
         this.db = require('../models');
         this.User = this.db.User;
     }

@@ -3,12 +3,16 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
+require('redis');
 var db = require('./models');
+
 
 var indexRouter = require('./routes/index');
 var customerRouter = require('./routes/customer');
 var companyRouter = require('./routes/bedrift');
 var authRouter = require('./routes/auth');
+var shopRouter = require('./routes/shop');
+var adminRouter = require('./routes/admin');
 
 db.sequelize.sync({ force: true })
 
@@ -28,6 +32,8 @@ app.use('/', indexRouter);
 app.use('/person', customerRouter);
 app.use('/bedrift', companyRouter);
 app.use('/person/auth', authRouter);
+app.use("/admin", adminRouter);
+app.use('/shop', shopRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
